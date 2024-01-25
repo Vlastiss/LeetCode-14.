@@ -15,25 +15,24 @@
  * @return {string}
  */
 
-let prefix = '';
 var longestCommonPrefix = function (strs) {
 
-    if (strs.length === ''){
+    if (strs.length == 0) {
         return '';
     }
-    for (let i = 0; i < strs.length; i++) {
-        { let j = 0; j < strs[i].length; j++ } {
-            if (strs[i][j] === strs[i][j] === strs[i][j]) {
-                prefix += strs[i][j];
+
+    let prefix = '';
+    for (let j = 0; j < strs[0].length; j++) {
+        for (let i = 0; i < strs.length; i++) {
+            if (strs[i][j] != strs[0][j]) {
+                return prefix
             }
-            return prefix
         }
-        {
-        }
-        console.log(strs[i][0])
-        return prefix;
+        prefix += strs[0][j];
     }
+
+    return prefix;
 
 };
 
-longestCommonPrefix(["flower", "flow", "flight"]);
+console.log(longestCommonPrefix(["dog", "racecar", "car"]));
